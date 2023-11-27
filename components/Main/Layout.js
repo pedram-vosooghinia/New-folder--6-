@@ -2,6 +2,7 @@ import Head from "next/head";
 import "react-toastify/dist/ReactToastify.css";
 import { NavbarWithSearch } from "../MTailwind/Navbar";
 import { FooterWithSocialLinks } from "../MTailwind/footer";
+import Footer from "./Footer";
 function Layout({ title, children }) {
   return (
     <>
@@ -15,7 +16,7 @@ function Layout({ title, children }) {
         <main>{children}</main>
       </div>
       <div className="mt-8 ">
-        <FooterWithSocialLinks />
+        <Footer/>
       </div>
     </>
   );
