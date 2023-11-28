@@ -1,4 +1,3 @@
-// components/Navbar.js
 import Link from "next/link";
 
 const Navbar = () => {
@@ -42,7 +41,7 @@ const Navbar = () => {
       <div className="md:py-4 md:px-12 text-right">
         <input
           type="text"
-          placeholder=" جستجو محصولات"
+          placeholder="جستجو محصولات tetisan"
           className="w-full md:w-1/3 mx-auto px-6 py-2 border rounded-md rtl"
           style={{ '::placeholder': { color: '#' } }}
         />
