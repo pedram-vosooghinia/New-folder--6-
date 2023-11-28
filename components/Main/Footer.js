@@ -15,7 +15,7 @@ const Footer = () => {
   return (
     <footer className="bg-pedram-4 relative w-full text-pedram-2">
       <div className="container mx-auto flex flex-col md:flex-row justify-between items-center">
-        <div className="text-pedram-1 m-6 text-4xl">TETISAN</div>
+        <div className="text-pedram-1 m-6 text-4xl font-bold">TETISAN</div>
         <div className="flex md:flex-row  p-6 rtl w-full ">
           {links.map((category) => (
             <div

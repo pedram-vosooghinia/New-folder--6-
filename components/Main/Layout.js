@@ -1,8 +1,7 @@
 import Head from "next/head";
 import "react-toastify/dist/ReactToastify.css";
-import { NavbarWithSearch } from "../MTailwind/Navbar";
-import { FooterWithSocialLinks } from "../MTailwind/footer";
 import Footer from "./Footer";
+import Navbar from "./Navbar";
 function Layout({ title, children }) {
   return (
     <>
@@ -11,7 +10,7 @@ function Layout({ title, children }) {
       <Head>
         <title>{`${title} - Shopping`}</title>
       </Head>
-      <NavbarWithSearch />
+      <Navbar/>
       <div className=" bg-slate-50	">
         <main>{children}</main>
       </div>
