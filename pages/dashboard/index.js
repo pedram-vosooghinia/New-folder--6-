@@ -1,11 +1,11 @@
 import React from 'react';
-import ProductForm from '../../components/dashboard/ProductForm';
+import AddProductForm from '../../components/dashboard/ProductForm';
 
 const Dashboard = () => {
   return (
     <div>
       <h1>Dashboard</h1>
-      <ProductForm />
+      <AddProductForm />
     </div>
   );
 };
