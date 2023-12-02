@@ -16,7 +16,7 @@ const Navbar = () => {
     },
     {
       title: "حساب کاربری",
-      linkTitle: "",
+      linkTitle: "/dashboard",
     },
   ];
 
