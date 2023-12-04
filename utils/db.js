@@ -1,16 +1,33 @@
-// import mongoose from 'mongoose'
+// utils/db.js
+import mongoose from 'mongoose';
 
-// async function connect() {
-//   await mongoose.connect('mongodb://127.0.0.1:27017/shopping')
+async function connect() {
+  try {
+    await mongoose.connect('mongodb://127.0.0.1:27017/tetisShop', {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    });
 
-//   console.log('Connected.')
-// }
+    console.log('Connected.');
+  } catch (error) {
+    console.error('Error connecting to MongoDB:', error);
+  }
+}
 
-// function convertToObj(doc) {
-//   doc._id = doc._id.toString()
+async function disconnect() {
+  try {
+    await mongoose.disconnect();
+    console.log('Disconnected from MongoDB.');
+  } catch (error) {
+    console.error('Error disconnecting from MongoDB:', error);
+  }
+}
 
-//   return doc
-// }
+function convertToObj(doc) {
+  const convertedDoc = doc.toObject();
+  convertedDoc._id = convertedDoc._id.toString();
+  return convertedDoc;
+}
 
-// const db = { connect, convertToObj }
-// export default db
+const db = { connect, disconnect, convertToObj };
+export default db;
