@@ -21,20 +21,11 @@ export default Home;
 export async function getServerSideProps() {
   await db.connect();
 
-  // Fetch data from the MongoDB collection
-  const products = await Product.find().lean();
-
-  // Convert _id to string for each product
-  const serializedProducts = products.map((product) => {
-    return {
-      ...product,
-      _id: product._id.toString(),
-    };
-  });
+  const products = await Product.find({}, { _id: 0 }).lean();
 
   await db.disconnect();
 
   return {
-    props: { products: serializedProducts },
+    props: { products },
   };
 }
