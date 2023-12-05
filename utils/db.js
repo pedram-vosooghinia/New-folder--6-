@@ -30,4 +30,5 @@ function convertToObj(doc) {
 }
 
 const db = { connect, disconnect, convertToObj };
+
 export default db;
