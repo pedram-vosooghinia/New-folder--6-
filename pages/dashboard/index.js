@@ -1,5 +1,5 @@
 import React from "react";
-import AddProductForm from "../../components/dashboard/ProductForm";
+import AddProductForm from "../../components/dashboard/AddProductForm";
 
 const Dashboard = () => {
   return (
