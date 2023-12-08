@@ -1,8 +1,7 @@
-// components/Sidebar.js
 
 import Link from "next/link";
 import { useState } from "react";
-import { IoMenu } from "react-icons/io5";
+import { BsFillMenuButtonWideFill } from "react-icons/bs";
 
 const Sidebar = () => {
   const items = [
@@ -45,18 +44,16 @@ const Sidebar = () => {
 
   return (
     <div
-      className={`rtl bg-pedram-4 h-screen ${
-        open ? "w-64" : "hidden"
-      } md:block`}
+      className=" bg-pedram-4 w-full"
     >
-      <div className="flex items-center justify-between p-4">
+      <div className=" items-center  justify-between p-4">
         <button onClick={toggleSidebar}>
-          <IoMenu />
+        <BsFillMenuButtonWideFill />
         </button>
       </div>
       {open && (
         <nav>
-          <ul className="space-y-1">
+          <ul className="mx-8 items-center space-y-1">
             {items.map((item) => (
               <SidebarItem key={item.id} item={item} />
             ))}
@@ -77,7 +74,7 @@ const SidebarItem = ({ item }) => {
   return (
     <li>
       <div
-        className="flex items-center justify-between px-4 py-2 cursor-pointer"
+        className="flex rounded-lg bg-pedram-1 text-white items-center justify-between px-4 py-2 cursor-pointer "
         onClick={item.submenu ? toggleSubMenu : null}
       >
         <Link href={item.link}>
@@ -89,11 +86,11 @@ const SidebarItem = ({ item }) => {
       </div>
 
       {item.submenu && openSubMenu && (
-        <ul className="pl-8">
+        <ul className="pl-8 ">
           {item.submenu.map((subItem) => (
-            <li key={subItem.id}>
+            <li key={subItem.id} className="">
               <Link href={subItem.link}>
-                <p className="block px-4 py-2">{subItem.label}</p>
+                <p className="block px-16 py-2 my-2 bg-pedram-3 rounded-lg ">{subItem.label}</p>
               </Link>
             </li>
           ))}
