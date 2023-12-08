@@ -1,11 +1,13 @@
 import React from "react";
-import AddProductForm from "../../components/dashboard/AddProductForm";
+import Sidebar from "../../components/dashboard/Sidebar";
 
 const Dashboard = () => {
   return (
     <>
-      <h1>Dashboard</h1>
-      <AddProductForm />
+      <div className="flex rtl bg-gray-100  ">
+ 
+      <Sidebar />
+      </div>
     </>
   );
 };
