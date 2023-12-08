@@ -5,7 +5,7 @@ const Dashboard = () => {
   return (
     <>
       <div className="flex rtl bg-gray-100  ">
- 
+
       <Sidebar />
       </div>
     </>
