@@ -11,10 +11,10 @@ function Layout({ title, children }) {
         <title>{`${title} - Shopping`}</title>
       </Head>
       <Navbar/>
-      <div className=" bg-slate-50	">
+      <div className="	">
         <main>{children}</main>
       </div>
-      <div className="mt-8 ">
+      <div className=" ">
         <Footer/>
       </div>
     </>

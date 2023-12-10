@@ -4,7 +4,7 @@ import Link from "next/link";
 const ProductCard = ({ product }) => {
  console.log("product",product)
   return (
-    <div className="max-w-sm rounded overflow-hidden shadow-lg m-8 rtl">
+    <div className="max-w-sm rounded overflow-hidden shadow-lg my-4 rtl">
       <Link href={`/product/${product.slug}`}>
         <img
           src={product.image}

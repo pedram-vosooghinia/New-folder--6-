@@ -1,50 +1,70 @@
 import Link from "next/link";
+import { FaCartShopping } from "react-icons/fa6";
+import { MdOutlinePeopleOutline } from "react-icons/md";
+import { BsTelephoneInbound } from "react-icons/bs";
+import { MdOutlineDashboard } from "react-icons/md";
 
 const Navbar = () => {
   const lists = [
     {
       title: "درباره ما",
       linkTitle: "",
+      icon: <MdOutlinePeopleOutline size={24} />,
     },
     {
       title: "تماس با ما",
       linkTitle: "",
-    },
-    {
-      title: "سبد خرید",
-      linkTitle: "",
+      icon: <BsTelephoneInbound size={24} />,
     },
     {
       title: "حساب کاربری",
       linkTitle: "/dashboard",
+      icon: <MdOutlineDashboard size={24} />,
     },
   ];
-
   return (
-    <nav className="bg-pedram-4 p-4 fixed top-0 w-full z-10">
-      <div className="container mx-auto flex justify-between items-center">
-        <div className="hidden md:inline-block">
+    <nav className="  rtl bg-pedram-4 p-4 fixed top-0 w-full z-10">
+      <div className="flex items-center justify-between pb-4">
+        <div className="w-full relative px-8">
+          <input
+            type="text"
+            placeholder="جستجو محصولات tetisan"
+            className="w-full px-6 py-2 border rounded-md rtl text-black placeholder-gray-500 focus:outline-none focus:border-pedram-2"
+            style={{ textAlign: "center" }}
+          />
+        </div>
+        <div className="hidden md:flex w-1/5">
           <Link href="/">
-            <a className="text-pedram-1 m-6 text-4xl font-bold">TETISAN</a>
+            <a className="text-pedram-1  text-4xl font-bold">TETISAN</a>
           </Link>
         </div>
-        <div className=" flex items-center hidden md:flex items-center space-x-4 rtl">
+      </div>
+      <div className="flex  justify-between hidden md:flex">
+        <div className="flex items-center mx-4">
           {lists.map((item) => (
             <Link key={item.title} href={item.linkTitle}>
-              <a className=" text-pedram-2 text-xl font-bold px-4">
-                {item.title}
-              </a>
+              <div className="flex mx-4 items-center text-gray-700 text-l relative group">
+                <span className="mx-2">{item.icon}</span>
+                <span className="mx-2 pb-2">{item.title}</span>
+                <div className="absolute  inset-x-0 bottom-0 h-0.5 bg-pedram-2 w-full transform scale-x-0 group-hover:scale-x-100 transition-transform"></div>
+              </div>
             </Link>
           ))}
         </div>
-      </div>
-      <div className="md:py-4 md:px-12 text-right">
-        <input
-          type="text"
-          placeholder="جستجو محصولات tetisan"
-          className="w-full md:w-1/3 mx-auto px-6 py-2 border rounded-md rtl"
-          style={{ '::placeholder': { color: '#' } }}
-        />
+        <div className="flex">
+          <div className="mx-4 p-2 text-pedram-2  w-fit	text-gray-100 text-l rounded-lg font-bold bg-pedram-3">
+            <Link href="/login">ورود / ثبت نام</Link>
+          </div>
+
+          <div >
+            <div className="flex flex-col items-center text-pedram-2 font-bold text-xs">
+              <Link href="/" className="flex items-center">
+                <FaCartShopping size={24} />
+              </Link>
+              <Link href="/" className="mt-1">سبد خرید</Link>
+            </div>
+          </div>
+        </div>
       </div>
     </nav>
   );

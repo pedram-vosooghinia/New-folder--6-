@@ -7,7 +7,7 @@ import Product from "../models/product";
 function Home({ products }) {
   return (
     <Layout title="Home Page">
-      <div className="md:mt-40 mt-20 relative pb-12 grid grid-cols-1 sm:justify-items-center sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mx-auto">
+      <div className="mt-28 md:mt-40	 relative pb-12 grid grid-cols-1 justify-items-center sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mx-auto">
         {products.map((product) => (
           <ProductCard key={product._id} product={product} />
         ))}
