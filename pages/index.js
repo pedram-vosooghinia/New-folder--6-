@@ -1,8 +1,8 @@
 // pages/index.js
 import Layout from "../components/Main/Layout";
-import ProductCard from "../components/Main/ProductCard";
+import ProductCard from "../components/product/ProductCard";
 import db from "../utils/db";
-import Product from "../models/product";
+import Product from "../models/productModel";
 
 function Home({ products }) {
   return (

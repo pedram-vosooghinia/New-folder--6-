@@ -1,8 +1,8 @@
 // pages/products/[slug].js
 import Layout from "../../components/Main/Layout";
 import db from "../../utils/db";
-import Product from "../../models/product";
-
+import Product from "../../models/productModel";
+import AddShoppingValues from "../../components/product/AddShoppingValues";
 async function getProductBySlug(slug) {
   await db.connect();
   const product = await Product.findOne({ slug }, { _id: 0 }).lean();
@@ -50,6 +50,7 @@ function ProductPage({ product }) {
                 <h3>{product?.price}</h3>
                 <h3 className="rtl px-2">تومان</h3>
               </div>
+              <AddShoppingValues validationValue={product.validationValue} />
               <button className="flex  mx-auto rounded-md bg-pedram-3 text-gray-100  m-2 p-3">
                 افزودن به سبد خرید
               </button>

@@ -13,6 +13,8 @@ const productSchema = new mongoose.Schema({
     seasion: { type: String, required: true },
     description: { type: String, required: true },
     slug: { type: String, required: true },
+    validationValue: { type: Number, required: true },
+
   },{ versionKey: false });
 
 const Product =
