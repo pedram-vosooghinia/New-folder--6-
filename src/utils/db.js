@@ -1,4 +1,3 @@
-// utils/db.js
 import mongoose from 'mongoose';
 
 async function connect() {

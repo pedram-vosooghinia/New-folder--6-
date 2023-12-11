@@ -1,5 +1,4 @@
 import Head from "next/head";
-import "react-toastify/dist/ReactToastify.css";
 import Footer from "./Footer";
 import Navbar from "./Navbar";
 function Layout({ title, children }) {
@@ -11,10 +10,10 @@ function Layout({ title, children }) {
         <title>{`${title} - Shopping`}</title>
       </Head>
       <Navbar/>
-      <div className=" bg-slate-50	">
+      <div className="	">
         <main>{children}</main>
       </div>
-      <div className="mt-8 ">
+      <div className=" ">
         <Footer/>
       </div>
     </>
